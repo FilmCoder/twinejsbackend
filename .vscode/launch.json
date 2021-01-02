@@ -11,7 +11,10 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\app.js"
+            "program": "${workspaceFolder}\\app.js",
+            "env": {
+                "DATABASE_URL": "postgresql://postgres:password@localhost:5432/twinebot"
+            }
         }
     ]
 }

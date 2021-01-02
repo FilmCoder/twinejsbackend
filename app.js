@@ -7,12 +7,16 @@ const port = 8000;
 app.use(bodyParser.json())
 
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'twinebot',
-  password: 'password',
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
 })
+
+// const pool = new Pool({
+//   user: 'postgres',
+//   host: 'localhost',
+//   database: 'twinebot',
+//   password: 'password',
+//   port: 5432,
+// })
 
 app.post('/entries/:key', async (req, res) => {
   const key = req.params.key;
